@@ -17,6 +17,9 @@
 		32C31F63281FB39E00212BF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C31F62281FB39E00212BF1 /* Assets.xcassets */; };
 		32C31F66281FB39E00212BF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C31F65281FB39E00212BF1 /* Preview Assets.xcassets */; };
 		32C31F78281FBB8E00212BF1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F77281FBB8E00212BF1 /* ListView.swift */; };
+		32C31F7A281FCCD900212BF1 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F79281FCCD900212BF1 /* ListRowView.swift */; };
+		32C31F7C281FDE7B00212BF1 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F7B281FDE7B00212BF1 /* AddView.swift */; };
+		32C31F82281FE41100212BF1 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F81281FE41100212BF1 /* AlarmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		32C31F67281FB39E00212BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32C31F68281FB39E00212BF1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		32C31F77281FBB8E00212BF1 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		32C31F79281FCCD900212BF1 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
+		32C31F7B281FDE7B00212BF1 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		32C31F81281FE41100212BF1 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,7 @@
 			children = (
 				32C31F58281FB39E00212BF1 /* DrugReminderApp.swift */,
 				32C31F5C281FB39E00212BF1 /* NotificationController.swift */,
+				32C31F7E281FE37A00212BF1 /* Models */,
 				32C31F76281FBB6D00212BF1 /* Views */,
 				32C31F5E281FB39E00212BF1 /* NotificationView.swift */,
 				32C31F60281FB39E00212BF1 /* ComplicationController.swift */,
@@ -143,8 +150,18 @@
 			isa = PBXGroup;
 			children = (
 				32C31F77281FBB8E00212BF1 /* ListView.swift */,
+				32C31F79281FCCD900212BF1 /* ListRowView.swift */,
+				32C31F7B281FDE7B00212BF1 /* AddView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		32C31F7E281FE37A00212BF1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32C31F81281FE41100212BF1 /* AlarmModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,11 +291,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C31F7C281FDE7B00212BF1 /* AddView.swift in Sources */,
+				32C31F82281FE41100212BF1 /* AlarmModel.swift in Sources */,
 				32C31F5D281FB39E00212BF1 /* NotificationController.swift in Sources */,
 				32C31F78281FBB8E00212BF1 /* ListView.swift in Sources */,
 				32C31F61281FB39E00212BF1 /* ComplicationController.swift in Sources */,
 				32C31F59281FB39E00212BF1 /* DrugReminderApp.swift in Sources */,
 				32C31F5F281FB39E00212BF1 /* NotificationView.swift in Sources */,
+				32C31F7A281FCCD900212BF1 /* ListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
