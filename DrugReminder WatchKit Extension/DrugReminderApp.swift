@@ -7,12 +7,21 @@
 
 import SwiftUI
 
+/*
+ MVVM Architecture
+ 
+ Model - data point
+ View - UI
+ VievModel - manages Models for View
+ 
+ */
+
 @main
 struct DrugReminderApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                ListView()
             }
         }
 
