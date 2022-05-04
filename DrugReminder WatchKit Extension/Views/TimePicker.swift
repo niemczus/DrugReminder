@@ -1,15 +1,18 @@
-//
-//  TimePicker.swift
-//  DrugReminder WatchKit Extension
-//
-//  Created by Kamil Niemczyk on 02/05/2022.
-//
+////
+////  TimePicker.swift
+////  DrugReminder WatchKit Extension
+////
+////  Created by Kamil Niemczyk on 02/05/2022.
+////
 
 import SwiftUI
 
+
+
+
 struct TimePicker: View {
-    // Start timer at mid-day
-    @State var seconds: TimeInterval = 60 * 60 * 12
+    
+    @Binding var seconds: TimeInterval
     
     static let formatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
@@ -28,7 +31,7 @@ struct TimePicker: View {
             Spacer()
             
             
-            NavigationLink(destination: AddView()) {
+            NavigationLink(destination: AddView(seconds: seconds)) {
                 Text("Confirm")
                 }
                 .foregroundColor(.orange)
@@ -38,7 +41,9 @@ struct TimePicker: View {
 }
 
 struct TimePicker_Previews: PreviewProvider {
+    @State static var midDay: Double = 60
+    
     static var previews: some View {
-        TimePicker()
+        TimePicker(seconds: $midDay)
     }
 }

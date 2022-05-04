@@ -8,32 +8,33 @@
 import SwiftUI
 
 
+
 struct AddView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var listViewModel: ListViewModel
+    @State var seconds: TimeInterval = Double(60 * 60 * 12)
     
     static let formatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute]
         return formatter
     }()
-    
-   
-    var time = formatter.string(from: TimePicker().seconds)
+//    var midDay: Double = 60 * 60 * 12
     var label = "Alarm"
     var body: some View {
+        let hours = Int(seconds / 3600)
+        let minutes = Int(seconds.truncatingRemainder(dividingBy: 3600) / 60)
+        
         NavigationView {
             List {
                 VStack(alignment: .leading) {
-                    NavigationLink(destination: TimePicker()) {
-                        Text(time ?? "00:00")
+                    NavigationLink(destination: TimePicker(seconds: $seconds)) {
+                        Text(minutes < 10 ? "\(hours):0\(minutes)" : "\(hours):\(minutes)")
                             .font(.title3)
-                            .foregroundColor(.white)
+                        Button("Change time") {
+                            
+                        }
                     }
-                    Button("Change time"){
-                        
-                    }
-                        .foregroundColor(.orange)
                 }
                 VStack(alignment: .leading) {
                     Text(label)
@@ -44,7 +45,7 @@ struct AddView: View {
                         .foregroundColor(.orange)
                 }
                 Button("Set Alarm") {
-                    listViewModel.addAlarm(time: time ?? "00:00", label: label)
+                    listViewModel.addAlarm(time: String(seconds), label: label)
                     presentationMode.wrappedValue.dismiss()
 //                    ListView().defaultAlarms.sequence.append(AlarmModel(time: time, label: label, isActive: true))
                 }
@@ -59,7 +60,7 @@ struct AddView: View {
 struct AddView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-        AddView()
+            AddView(seconds: 100)
         }
         .environmentObject(ListViewModel())
     }
