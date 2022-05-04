@@ -9,23 +9,16 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State var alarms = []
-    @State var firstAlertActive = false
-    @State var secondAlertActive = false
-    @State var thirdAlertActive = false
-    @State var fourthAlertActive = false
+    @EnvironmentObject var listViewModel: ListViewModel
     
-    @State var defaultAlarms: [AlarmModel] = [
-        AlarmModel(time: "06:00", label: "alarm", isActive: true),
-        AlarmModel(time: "07:00", label: "alarm 2", isActive: true)
-    ]
     
     var body: some View {
         NavigationView{
             List {
-                ForEach(defaultAlarms) { alarm in
+                ForEach(listViewModel.alarms) { alarm in
                     ListRowView(alarm: alarm)
                 }
+                .onDelete(perform: listViewModel.deleteAlarm)
                 NavigationLink(destination: AddView()) {
                     Text("New Alarm")
                         .padding()
@@ -37,6 +30,7 @@ struct ListView: View {
 
         }
     }
+    
 }
 
 struct ListView_Previews: PreviewProvider {
@@ -44,5 +38,6 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView()
         }
+        .environmentObject(ListViewModel())
     }
 }

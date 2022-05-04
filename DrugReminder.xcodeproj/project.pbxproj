@@ -21,6 +21,7 @@
 		32C31F7C281FDE7B00212BF1 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F7B281FDE7B00212BF1 /* AddView.swift */; };
 		32C31F82281FE41100212BF1 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F81281FE41100212BF1 /* AlarmModel.swift */; };
 		32EAB6532820042000F836E3 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EAB6522820042000F836E3 /* TimePicker.swift */; };
+		32EAB68D2822981700F836E3 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EAB68C2822981700F836E3 /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		32C31F7B281FDE7B00212BF1 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		32C31F81281FE41100212BF1 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 		32EAB6522820042000F836E3 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		32EAB68C2822981700F836E3 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				32C31F58281FB39E00212BF1 /* DrugReminderApp.swift */,
 				32C31F5C281FB39E00212BF1 /* NotificationController.swift */,
 				32C31F7E281FE37A00212BF1 /* Models */,
+				32EAB68B282297E300F836E3 /* ViewModels */,
 				32C31F76281FBB6D00212BF1 /* Views */,
 				32C31F5E281FB39E00212BF1 /* NotificationView.swift */,
 				32C31F60281FB39E00212BF1 /* ComplicationController.swift */,
@@ -165,6 +168,14 @@
 				32C31F81281FE41100212BF1 /* AlarmModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		32EAB68B282297E300F836E3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				32EAB68C2822981700F836E3 /* ListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32EAB68D2822981700F836E3 /* ListViewModel.swift in Sources */,
 				32C31F7C281FDE7B00212BF1 /* AddView.swift in Sources */,
 				32C31F82281FE41100212BF1 /* AlarmModel.swift in Sources */,
 				32C31F5D281FB39E00212BF1 /* NotificationController.swift in Sources */,

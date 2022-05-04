@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct AddView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var listViewModel: ListViewModel
     
     static let formatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
@@ -42,7 +44,9 @@ struct AddView: View {
                         .foregroundColor(.orange)
                 }
                 Button("Set Alarm") {
-                    
+                    listViewModel.addAlarm(time: time ?? "00:00", label: label)
+                    presentationMode.wrappedValue.dismiss()
+//                    ListView().defaultAlarms.sequence.append(AlarmModel(time: time, label: label, isActive: true))
                 }
                 .foregroundColor(.green)
                 .font(.system(size: 25))
@@ -57,5 +61,6 @@ struct AddView_Previews: PreviewProvider {
         NavigationView {
         AddView()
         }
+        .environmentObject(ListViewModel())
     }
 }

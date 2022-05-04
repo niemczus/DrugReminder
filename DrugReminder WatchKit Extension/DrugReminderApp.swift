@@ -18,11 +18,15 @@ import SwiftUI
 
 @main
 struct DrugReminderApp: App {
+    
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
                 ListView()
             }
+            .environmentObject(listViewModel)
         }
 
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
