@@ -8,25 +8,30 @@
 import SwiftUI
 
 struct ListView: View {
+    
+    @State var alarms = []
     @State var firstAlertActive = false
     @State var secondAlertActive = false
     @State var thirdAlertActive = false
     @State var fourthAlertActive = false
     
-    @State var alarms: [String] = ["First Drug", "Second Drug", "Third Drug", "Fourth Drug"]
+    @State var defaultAlarms: [AlarmModel] = [
+        AlarmModel(time: "06:00", label: "alarm", isActive: true),
+        AlarmModel(time: "07:00", label: "alarm 2", isActive: true)
+    ]
     
     var body: some View {
         NavigationView{
             List {
-                ForEach(alarms, id: \.self) { alarm in
-                    ListRowView(title: alarm)
+                ForEach(defaultAlarms) { alarm in
+                    ListRowView(alarm: alarm)
                 }
-                Button("New Alarm") {
-                    //action to create new alarm
+                NavigationLink(destination: AddView()) {
+                    Text("New Alarm")
+                        .padding()
+                        .font(.callout)
+                        .foregroundColor(.white)
                 }
-                .padding()
-                .foregroundColor(.mint)
-              
             }
             .navigationTitle("Alarms")
 

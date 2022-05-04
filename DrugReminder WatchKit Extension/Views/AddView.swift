@@ -7,21 +7,35 @@
 
 import SwiftUI
 
+
 struct AddView: View {
+    
+    static let formatter: DateComponentsFormatter = {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute]
+        return formatter
+    }()
+    
+   
+    var time = formatter.string(from: TimePicker().seconds)
+    var label = "Alarm"
     var body: some View {
         NavigationView {
             List {
                 VStack(alignment: .leading) {
-                    Text("6:00")
-                        .font(.title2)
+                    NavigationLink(destination: TimePicker()) {
+                        Text(time ?? "00:00")
+                            .font(.title3)
+                            .foregroundColor(.white)
+                    }
                     Button("Change time"){
                         
                     }
                         .foregroundColor(.orange)
                 }
                 VStack(alignment: .leading) {
-                    Text("Alarm")
-                        .font(.title2)
+                    Text(label)
+                        .font(.title3)
                     Button("Label"){
                         
                     }

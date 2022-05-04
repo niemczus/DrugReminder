@@ -9,25 +9,28 @@ import SwiftUI
 
 struct ListRowView: View {
     
-    let title: String
+    let alarm: AlarmModel
+    
     
     var body: some View {
         HStack{
             VStack(alignment: .leading){
-                Text("7:00")
+                Text(alarm.time)
                     .font(.callout)
-                Text(title)
+                Text(alarm.label)
                     .foregroundColor(.orange)
             }
-//            Toggle(isOn: $secondAlertActive) {
-                //action here
+//            Toggle(isOn: alarm.isActive? true : false) {
+////                action here
 //            }
         }
     }
 }
 
 struct ListRowView_Previews: PreviewProvider {
+    static var alarm1 = AlarmModel(time: "6:00", label: "alarm1", isActive: true)
+    
     static var previews: some View {
-        ListRowView(title: "First Drug")
+    ListRowView(alarm: alarm1)
     }
 }

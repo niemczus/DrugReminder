@@ -20,6 +20,7 @@
 		32C31F7A281FCCD900212BF1 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F79281FCCD900212BF1 /* ListRowView.swift */; };
 		32C31F7C281FDE7B00212BF1 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F7B281FDE7B00212BF1 /* AddView.swift */; };
 		32C31F82281FE41100212BF1 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F81281FE41100212BF1 /* AlarmModel.swift */; };
+		32EAB6532820042000F836E3 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EAB6522820042000F836E3 /* TimePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		32C31F79281FCCD900212BF1 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		32C31F7B281FDE7B00212BF1 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		32C31F81281FE41100212BF1 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
+		32EAB6522820042000F836E3 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				32C31F77281FBB8E00212BF1 /* ListView.swift */,
 				32C31F79281FCCD900212BF1 /* ListRowView.swift */,
 				32C31F7B281FDE7B00212BF1 /* AddView.swift */,
+				32EAB6522820042000F836E3 /* TimePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +183,8 @@
 				32C31F4B281FB39D00212BF1 /* PBXTargetDependency */,
 			);
 			name = DrugReminder;
+			packageProductDependencies = (
+			);
 			productName = DrugReminder;
 			productReference = 32C31F44281FB39C00212BF1 /* DrugReminder.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
@@ -248,6 +253,8 @@
 				Base,
 			);
 			mainGroup = 32C31F3D281FB39C00212BF1;
+			packageReferences = (
+			);
 			productRefGroup = 32C31F45281FB39C00212BF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,6 +301,7 @@
 				32C31F7C281FDE7B00212BF1 /* AddView.swift in Sources */,
 				32C31F82281FE41100212BF1 /* AlarmModel.swift in Sources */,
 				32C31F5D281FB39E00212BF1 /* NotificationController.swift in Sources */,
+				32EAB6532820042000F836E3 /* TimePicker.swift in Sources */,
 				32C31F78281FBB8E00212BF1 /* ListView.swift in Sources */,
 				32C31F61281FB39E00212BF1 /* ComplicationController.swift in Sources */,
 				32C31F59281FB39E00212BF1 /* DrugReminderApp.swift in Sources */,
