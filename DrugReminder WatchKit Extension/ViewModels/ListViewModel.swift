@@ -17,8 +17,8 @@ class ListViewModel: ObservableObject {
     
     func getAlarms() {
         let newAlarms = [
-            AlarmModel(time: "06:00", label: "alarm", isActive: true),
-            AlarmModel(time: "07:00", label: "alarm 2", isActive: true)
+            AlarmModel(time: 1030, label: "alarm", isActive: true),
+            AlarmModel(time: 600, label: "alarm 2", isActive: true)
         ]
         alarms.append(contentsOf: newAlarms)
     }
@@ -27,7 +27,7 @@ class ListViewModel: ObservableObject {
         alarms.remove(atOffsets: indexSet)
     }
     
-    func addAlarm(time: String, label: String, isActive: Bool = true) {
+    func addAlarm(time: Double, label: String, isActive: Bool = true) {
         let newAlarm = AlarmModel(time: time, label: label, isActive: isActive)
         alarms.append(newAlarm)
     }

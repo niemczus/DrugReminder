@@ -9,7 +9,7 @@ import Foundation
 
 struct AlarmModel: Identifiable {
     let id: String = UUID().uuidString
-    let time: String
+    let time: Double
     let label: String
     let isActive: Bool
 }
