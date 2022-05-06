@@ -24,7 +24,7 @@ struct DrugReminderApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ListView()
+                NotificationView()
             }
             .environmentObject(listViewModel)
         }

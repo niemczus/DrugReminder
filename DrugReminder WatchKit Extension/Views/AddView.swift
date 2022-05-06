@@ -32,10 +32,11 @@ struct AddView: View {
 //                        Text(minutes < 10 ? "\(hours):0\(minutes)" : "\(hours):\(minutes)")
 //                            .font(.title3)
                         Text(Self.formatter.string(from: seconds)!)
-                        Button("Change time") {
-                            
-                        }
                     }
+                    Button("Change time") {
+                        
+                    }
+                    .foregroundColor(.orange)
                 }
                 VStack(alignment: .leading) {
                     Text(label)

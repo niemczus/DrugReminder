@@ -16,10 +16,7 @@ class ListViewModel: ObservableObject {
     }
     
     func getAlarms() {
-        let newAlarms = [
-            AlarmModel(time: 1030, label: "alarm", isActive: true),
-            AlarmModel(time: 600, label: "alarm 2", isActive: true)
-        ]
+        let newAlarms: [AlarmModel] = []
         alarms.append(contentsOf: newAlarms)
     }
     
