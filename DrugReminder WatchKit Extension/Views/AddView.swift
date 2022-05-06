@@ -19,7 +19,7 @@ struct AddView: View {
         formatter.allowedUnits = [.hour, .minute]
         return formatter
     }()
-//    var midDay: Double = 60 * 60 * 12
+    
     var label = "Alarm"
     var body: some View {
         let hours = Int(seconds / 3600)
@@ -29,8 +29,6 @@ struct AddView: View {
             List {
                 VStack(alignment: .leading) {
                     NavigationLink(destination: TimePicker(seconds: $seconds)) {
-//                        Text(minutes < 10 ? "\(hours):0\(minutes)" : "\(hours):\(minutes)")
-//                            .font(.title3)
                         Text(Self.formatter.string(from: seconds)!)
                     }
                     Button("Change time") {
@@ -44,13 +42,12 @@ struct AddView: View {
                     Button("Label"){
                         
                     }
-                        .foregroundColor(.orange)
+                    .foregroundColor(.orange)
                 }
                 Button("Set Alarm") {
                     listViewModel.addAlarm(time: seconds, label: label)
                     presentationMode.wrappedValue.dismiss()
                     NotificationManager.instance.scheduleNotification(hour: hours, minutes: minutes)
-//                    ListView().defaultAlarms.sequence.append(AlarmModel(time: time, label: label, isActive: true))
                 }
                 .foregroundColor(.green)
                 .font(.system(size: 25))

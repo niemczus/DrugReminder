@@ -13,8 +13,7 @@
 		32C31F4E281FB39E00212BF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C31F4D281FB39E00212BF1 /* Assets.xcassets */; };
 		32C31F54281FB39E00212BF1 /* DrugReminder WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 32C31F53281FB39E00212BF1 /* DrugReminder WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		32C31F59281FB39E00212BF1 /* DrugReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F58281FB39E00212BF1 /* DrugReminderApp.swift */; };
-		32C31F5D281FB39E00212BF1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F5C281FB39E00212BF1 /* NotificationController.swift */; };
-		32C31F5F281FB39E00212BF1 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F5E281FB39E00212BF1 /* NotificationView.swift */; };
+		32C31F5F281FB39E00212BF1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F5E281FB39E00212BF1 /* NotificationManager.swift */; };
 		32C31F61281FB39E00212BF1 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C31F60281FB39E00212BF1 /* ComplicationController.swift */; };
 		32C31F63281FB39E00212BF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C31F62281FB39E00212BF1 /* Assets.xcassets */; };
 		32C31F66281FB39E00212BF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C31F65281FB39E00212BF1 /* Preview Assets.xcassets */; };
@@ -76,8 +75,7 @@
 		32C31F4D281FB39E00212BF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32C31F53281FB39E00212BF1 /* DrugReminder WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DrugReminder WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C31F58281FB39E00212BF1 /* DrugReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugReminderApp.swift; sourceTree = "<group>"; };
-		32C31F5C281FB39E00212BF1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		32C31F5E281FB39E00212BF1 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		32C31F5E281FB39E00212BF1 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		32C31F60281FB39E00212BF1 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		32C31F62281FB39E00212BF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32C31F65281FB39E00212BF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -135,15 +133,14 @@
 			children = (
 				32C31F58281FB39E00212BF1 /* DrugReminderApp.swift */,
 				32804C3528255C47004CA5A6 /* PersistenceController.swift */,
-				32C31F5C281FB39E00212BF1 /* NotificationController.swift */,
+				32C31F5E281FB39E00212BF1 /* NotificationManager.swift */,
 				32C31F7E281FE37A00212BF1 /* Models */,
 				32EAB68B282297E300F836E3 /* ViewModels */,
 				32C31F76281FBB6D00212BF1 /* Views */,
-				32C31F5E281FB39E00212BF1 /* NotificationView.swift */,
-				32C31F60281FB39E00212BF1 /* ComplicationController.swift */,
 				32C31F62281FB39E00212BF1 /* Assets.xcassets */,
 				32C31F67281FB39E00212BF1 /* Info.plist */,
 				32C31F68281FB39E00212BF1 /* PushNotificationPayload.apns */,
+				32C31F60281FB39E00212BF1 /* ComplicationController.swift */,
 				32C31F64281FB39E00212BF1 /* Preview Content */,
 			);
 			path = "DrugReminder WatchKit Extension";
@@ -319,12 +316,11 @@
 				32C31F7C281FDE7B00212BF1 /* AddView.swift in Sources */,
 				32804C3628255C47004CA5A6 /* PersistenceController.swift in Sources */,
 				32C31F82281FE41100212BF1 /* AlarmModel.swift in Sources */,
-				32C31F5D281FB39E00212BF1 /* NotificationController.swift in Sources */,
 				32EAB6532820042000F836E3 /* TimePicker.swift in Sources */,
 				32C31F78281FBB8E00212BF1 /* ListView.swift in Sources */,
 				32C31F61281FB39E00212BF1 /* ComplicationController.swift in Sources */,
 				32C31F59281FB39E00212BF1 /* DrugReminderApp.swift in Sources */,
-				32C31F5F281FB39E00212BF1 /* NotificationView.swift in Sources */,
+				32C31F5F281FB39E00212BF1 /* NotificationManager.swift in Sources */,
 				32804C3428254755004CA5A6 /* DrugReminder.xcdatamodeld in Sources */,
 				32C31F7A281FCCD900212BF1 /* ListRowView.swift in Sources */,
 			);

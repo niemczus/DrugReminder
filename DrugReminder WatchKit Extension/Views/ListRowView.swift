@@ -25,9 +25,6 @@ struct ListRowView: View {
                 Text(alarm.label)
                     .foregroundColor(.orange)
             }
-//            Toggle(isOn: alarm.isActive? true : false) {
-////                action here
-//            }
         }
     }
 }
