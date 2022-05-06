@@ -16,6 +16,7 @@ import SwiftUI
  
  */
 
+
 @main
 struct DrugReminderApp: App {
     
@@ -24,7 +25,7 @@ struct DrugReminderApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                NotificationView()
+                ListView()
             }
             .environmentObject(listViewModel)
         }

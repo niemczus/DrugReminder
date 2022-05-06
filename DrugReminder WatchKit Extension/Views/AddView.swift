@@ -22,8 +22,8 @@ struct AddView: View {
 //    var midDay: Double = 60 * 60 * 12
     var label = "Alarm"
     var body: some View {
-//        let hours = Int(seconds / 3600)
-//        let minutes = Int(seconds.truncatingRemainder(dividingBy: 3600) / 60)
+        let hours = Int(seconds / 3600)
+        let minutes = Int(seconds.truncatingRemainder(dividingBy: 3600) / 60)
         
         NavigationView {
             List {
@@ -49,6 +49,7 @@ struct AddView: View {
                 Button("Set Alarm") {
                     listViewModel.addAlarm(time: seconds, label: label)
                     presentationMode.wrappedValue.dismiss()
+                    NotificationManager.instance.scheduleNotification(hour: hours, minutes: minutes)
 //                    ListView().defaultAlarms.sequence.append(AlarmModel(time: time, label: label, isActive: true))
                 }
                 .foregroundColor(.green)

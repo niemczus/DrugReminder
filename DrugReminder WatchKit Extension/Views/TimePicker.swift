@@ -27,7 +27,7 @@ struct TimePicker: View {
                 .font(.largeTitle)
                 .focusable()
                 .digitalCrownRotation(
-                    $seconds, from: 0, through: 60 * 60 * 24 - 1, by: 300)
+                    $seconds, from: 0, through: 60 * 60 * 24 - 1, by: 60)
             Spacer()
             
             

@@ -22,11 +22,11 @@ class NotificationManager {
         }
     }
     
-    func scheduleNotification() {
+    func scheduleNotification(hour: Int, minutes: Int) {
         
         let content = UNMutableNotificationContent()
-        content.title = "This is first notification"
-        content.subtitle = "Don't forget to take your medicine"
+        content.title = "Hey!"
+        content.subtitle = "Don't forget to take your medicine :)"
         content.sound = .default
         
         //time
@@ -34,8 +34,8 @@ class NotificationManager {
         
         //calendar
         var dateComponents = DateComponents()
-        dateComponents.hour = 8
-        dateComponents.minute = 55
+        dateComponents.hour = hour
+        dateComponents.minute = minutes
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         let request = UNNotificationRequest(
@@ -53,7 +53,7 @@ struct NotificationView: View {
                 NotificationManager.instance.requestAuthorization()
             }
             Button("Schedule notification") {
-                NotificationManager.instance.scheduleNotification()
+                NotificationManager.instance.scheduleNotification(hour: 09, minutes: 21)
             }
 
         }

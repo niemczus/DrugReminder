@@ -11,9 +11,10 @@ struct ListView: View {
     
     @EnvironmentObject var listViewModel: ListViewModel
     
+    init() {
+        NotificationManager.instance.requestAuthorization()
+    }
   
-    
-    
     var body: some View {
         NavigationView{
             List {
