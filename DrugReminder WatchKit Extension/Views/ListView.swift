@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
+    @StateObject var cdViewModel = CoreDataViewModel()
     
     init() {
         NotificationManager.instance.requestAuthorization()

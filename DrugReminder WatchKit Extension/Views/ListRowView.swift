@@ -22,17 +22,9 @@ struct ListRowView: View {
             VStack(alignment: .leading){
                 Text(Self.formatter.string(from: alarm.time)!)
                     .font(.callout)
-                Text(alarm.label)
+                Text("Alarm")
                     .foregroundColor(.orange)
             }
         }
-    }
-}
-
-struct ListRowView_Previews: PreviewProvider {
-    static var alarm1 = AlarmModel(time: 640, label: "alarm1", isActive: true)
-    
-    static var previews: some View {
-    ListRowView(alarm: alarm1)
     }
 }

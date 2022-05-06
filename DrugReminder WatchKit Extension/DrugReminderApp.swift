@@ -37,7 +37,5 @@ struct DrugReminderApp: App {
                 print("default scene :)")
             }
         }
-
-        WKNotificationScene(controller: NotificationController.self, category: "myCategory")
     }
 }

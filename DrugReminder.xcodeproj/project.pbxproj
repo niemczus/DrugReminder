@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32804C3428254755004CA5A6 /* DrugReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32804C2E28254118004CA5A6 /* DrugReminder.xcdatamodeld */; };
 		32804C3628255C47004CA5A6 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804C3528255C47004CA5A6 /* PersistenceController.swift */; };
+		32804C3A2825B109004CA5A6 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804C392825B109004CA5A6 /* CoreDataViewModel.swift */; };
 		32C31F49281FB39D00212BF1 /* DrugReminder WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 32C31F48281FB39D00212BF1 /* DrugReminder WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		32C31F4E281FB39E00212BF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C31F4D281FB39E00212BF1 /* Assets.xcassets */; };
 		32C31F54281FB39E00212BF1 /* DrugReminder WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 32C31F53281FB39E00212BF1 /* DrugReminder WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		32804C2F28254118004CA5A6 /* DrugReminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrugReminder.xcdatamodel; sourceTree = "<group>"; };
 		32804C3528255C47004CA5A6 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		32804C392825B109004CA5A6 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		32C31F44281FB39C00212BF1 /* DrugReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrugReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C31F48281FB39D00212BF1 /* DrugReminder WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DrugReminder WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C31F4D281FB39E00212BF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				32EAB68C2822981700F836E3 /* ListViewModel.swift */,
+				32804C392825B109004CA5A6 /* CoreDataViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32EAB68D2822981700F836E3 /* ListViewModel.swift in Sources */,
+				32804C3A2825B109004CA5A6 /* CoreDataViewModel.swift in Sources */,
 				32C31F7C281FDE7B00212BF1 /* AddView.swift in Sources */,
 				32804C3628255C47004CA5A6 /* PersistenceController.swift in Sources */,
 				32C31F82281FE41100212BF1 /* AlarmModel.swift in Sources */,

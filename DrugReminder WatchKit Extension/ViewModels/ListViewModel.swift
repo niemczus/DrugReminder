@@ -11,25 +11,25 @@ import CoreData
 class ListViewModel: ObservableObject {
     
     @Published var alarms: [AlarmModel] = []
-    
+
     let persistenceController = PersistenceController.shared
-    
+
     init() {
         getAlarms()
     }
-    
+
     func getAlarms() {
         loadFromCD()
         let newAlarms: [AlarmModel] = []
         alarms.append(contentsOf: newAlarms)
     }
-    
+
     func deleteAlarm(indexSet: IndexSet) {
         alarms.remove(atOffsets: indexSet)
     }
-    
+
     func addAlarm(time: Double, label: String, isActive: Bool = true) {
-        let newAlarm = AlarmModel(time: time, label: label, isActive: isActive)
+        let newAlarm = AlarmModel(time: time)
         alarms.append(newAlarm)
         
         saveToCD(newAlarm: newAlarm)
@@ -46,14 +46,14 @@ class ListViewModel: ObservableObject {
             print(error)
         }
     }
-    
+
     func saveToCD(newAlarm: AlarmModel) {
         let context = persistenceController.container.viewContext
-        
+
         let newObject = Alarm(context: context)
         newObject.id = UUID()
         newObject.time = newAlarm.time
-            
+
         persistenceController.save()
     }
 }
