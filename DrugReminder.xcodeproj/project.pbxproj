@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32804C3428254755004CA5A6 /* DrugReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32804C2E28254118004CA5A6 /* DrugReminder.xcdatamodeld */; };
+		32804C3628255C47004CA5A6 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32804C3528255C47004CA5A6 /* PersistenceController.swift */; };
 		32C31F49281FB39D00212BF1 /* DrugReminder WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 32C31F48281FB39D00212BF1 /* DrugReminder WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		32C31F4E281FB39E00212BF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C31F4D281FB39E00212BF1 /* Assets.xcassets */; };
 		32C31F54281FB39E00212BF1 /* DrugReminder WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 32C31F53281FB39E00212BF1 /* DrugReminder WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -67,6 +69,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		32804C2F28254118004CA5A6 /* DrugReminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrugReminder.xcdatamodel; sourceTree = "<group>"; };
+		32804C3528255C47004CA5A6 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		32C31F44281FB39C00212BF1 /* DrugReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrugReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C31F48281FB39D00212BF1 /* DrugReminder WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DrugReminder WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C31F4D281FB39E00212BF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				32C31F4D281FB39E00212BF1 /* Assets.xcassets */,
+				32804C2E28254118004CA5A6 /* DrugReminder.xcdatamodeld */,
 			);
 			path = "DrugReminder WatchKit App";
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				32C31F58281FB39E00212BF1 /* DrugReminderApp.swift */,
+				32804C3528255C47004CA5A6 /* PersistenceController.swift */,
 				32C31F5C281FB39E00212BF1 /* NotificationController.swift */,
 				32C31F7E281FE37A00212BF1 /* Models */,
 				32EAB68B282297E300F836E3 /* ViewModels */,
@@ -311,6 +317,7 @@
 			files = (
 				32EAB68D2822981700F836E3 /* ListViewModel.swift in Sources */,
 				32C31F7C281FDE7B00212BF1 /* AddView.swift in Sources */,
+				32804C3628255C47004CA5A6 /* PersistenceController.swift in Sources */,
 				32C31F82281FE41100212BF1 /* AlarmModel.swift in Sources */,
 				32C31F5D281FB39E00212BF1 /* NotificationController.swift in Sources */,
 				32EAB6532820042000F836E3 /* TimePicker.swift in Sources */,
@@ -318,6 +325,7 @@
 				32C31F61281FB39E00212BF1 /* ComplicationController.swift in Sources */,
 				32C31F59281FB39E00212BF1 /* DrugReminderApp.swift in Sources */,
 				32C31F5F281FB39E00212BF1 /* NotificationView.swift in Sources */,
+				32804C3428254755004CA5A6 /* DrugReminder.xcdatamodeld in Sources */,
 				32C31F7A281FCCD900212BF1 /* ListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,6 +638,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		32804C2E28254118004CA5A6 /* DrugReminder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				32804C2F28254118004CA5A6 /* DrugReminder.xcdatamodel */,
+			);
+			currentVersion = 32804C2F28254118004CA5A6 /* DrugReminder.xcdatamodel */;
+			path = DrugReminder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 32C31F3E281FB39C00212BF1 /* Project object */;
 }
