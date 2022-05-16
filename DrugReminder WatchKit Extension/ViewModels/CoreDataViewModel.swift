@@ -28,7 +28,10 @@ class CoreDataViewModel: ObservableObject {
         let request = NSFetchRequest<Alarm>(entityName: "Alarm")
         
         do {
-            savedEntities = try container.viewContext.fetch(request)
+            let fetchedEntities = try container.viewContext.fetch(request)
+            savedEntities.removeAll()
+            savedEntities.append(contentsOf: fetchedEntities)
+            print("Alarms fetched")
         } catch {
             print("Error fetching \(error)")
         }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListRowView: View {
     
-    let alarm: AlarmModel
+    let alarm: Alarm
     
     static let formatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()

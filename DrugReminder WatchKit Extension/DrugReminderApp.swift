@@ -15,6 +15,7 @@ struct DrugReminderApp: App {
     @Environment(\.scenePhase) var scenePhase
    
     @StateObject var listViewModel: ListViewModel = ListViewModel()
+    @StateObject var cdViewModel: CoreDataViewModel = CoreDataViewModel()
     
     @SceneBuilder var body: some Scene {
         WindowGroup {
@@ -22,7 +23,7 @@ struct DrugReminderApp: App {
                 ListView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
-            .environmentObject(listViewModel)
+            .environmentObject(cdViewModel)
         }
         .onChange(of: scenePhase) { newScenePhase in
             switch newScenePhase {
