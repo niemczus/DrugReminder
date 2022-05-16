@@ -1,59 +1,54 @@
 //
-//  ListViewModel.swift
+//  CoreDataViewModel.swift
 //  DrugReminder WatchKit Extension
 //
-//  Created by Kamil Niemczyk on 04/05/2022.
+//  Created by Kamil Niemczyk on 06/05/2022.
 //
 
-import Foundation
+import SwiftUI
 import CoreData
 
 class ListViewModel: ObservableObject {
     
-    @Published var alarms: [AlarmModel] = []
-
-    let persistenceController = PersistenceController.shared
-
-    init() {
-        getAlarms()
-    }
-
-    func getAlarms() {
-        loadFromCD()
-        let newAlarms: [AlarmModel] = []
-        alarms.append(contentsOf: newAlarms)
-    }
-
-    func deleteAlarm(indexSet: IndexSet) {
-        alarms.remove(atOffsets: indexSet)
-    }
-
-    func addAlarm(time: Double, label: String, isActive: Bool = true) {
-        let newAlarm = AlarmModel(time: time)
-        alarms.append(newAlarm)
-        
-        saveToCD(newAlarm: newAlarm)
-    }
+    let container: NSPersistentContainer
+    @Published var alarms: [Alarm] = []
     
-    func loadFromCD() {
-        let context = persistenceController.container.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Alarm")
-        do {
-            let fetchedObjects = try context.fetch(fetchRequest)
-            guard let alarms = fetchedObjects as? [AlarmModel] else { return }
-            self.alarms = alarms
-        } catch {
-            print(error)
+    init() {
+        container = NSPersistentContainer(name: "DrugReminder")
+        container.loadPersistentStores { description, error in
+            if let error = error {
+                print("ERROR LOADING CORE DATA. \(error)")
+            } else {
+                self.fetchAlarms()
+                print("Successfully loading CoreData")
+            }
         }
     }
-
-    func saveToCD(newAlarm: AlarmModel) {
-        let context = persistenceController.container.viewContext
-
-        let newObject = Alarm(context: context)
-        newObject.id = UUID()
-        newObject.time = newAlarm.time
-
-        persistenceController.save()
+    
+    func fetchAlarms() {
+        let request = NSFetchRequest<Alarm>(entityName: "Alarm")
+        
+        do {
+            let fetchedEntities = try container.viewContext.fetch(request)
+            alarms = fetchedEntities
+        } catch {
+            print("Error fetching \(error)")
+        }
+    }
+    
+    func addAlarm(time: Double) {
+        let newAlarm = Alarm(context: container.viewContext)
+        newAlarm.time = time
+        newAlarm.id = UUID()
+        saveData()
+    }
+    
+    func saveData() {
+        do {
+            try container.viewContext.save()
+            fetchAlarms()
+        } catch {
+            print("Error saving. \(error)")
+        }
     }
 }

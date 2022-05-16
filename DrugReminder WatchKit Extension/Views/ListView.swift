@@ -10,19 +10,17 @@ import CoreData
 
 struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
-    @EnvironmentObject var cdViewModel: CoreDataViewModel
     
     init() {
         NotificationManager.instance.requestAuthorization()
     }
-  
+    
     var body: some View {
         NavigationView{
             List {
-                    ForEach(cdViewModel.savedEntities) { alarm in
-                        ListRowView(alarm: alarm)
-                    }
-//                .onDelete(perform: listViewModel.deleteAlarm)
+                ForEach(listViewModel.alarms) { alarm in
+                    ListRowView(alarm: alarm)
+                }
                 NavigationLink(destination: AddView()) {
                     Text("New Alarm")
                         .padding()
@@ -31,7 +29,6 @@ struct ListView: View {
                 }
             }
             .navigationTitle("Alarms")
-
         }
     }
 }
@@ -41,6 +38,6 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView()
         }
-        .environmentObject(CoreDataViewModel())
+        .environmentObject(ListViewModel())
     }
 }

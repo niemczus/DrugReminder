@@ -30,7 +30,6 @@ struct TimePicker: View {
                     $seconds, from: 0, through: 60 * 60 * 24 - 1, by: 60)
             Spacer()
             
-            
             NavigationLink(destination: AddView(seconds: seconds)) {
                 Text("Confirm")
                 }

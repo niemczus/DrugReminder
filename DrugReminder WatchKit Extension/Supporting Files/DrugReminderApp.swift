@@ -10,18 +10,14 @@ import SwiftUI
 @main
 struct DrugReminderApp: App {
     
-    let persistenceController = PersistenceController.shared
-    
     @Environment(\.scenePhase) var scenePhase
    
-    @StateObject var listViewModel: ListViewModel = ListViewModel()
-    @StateObject var cdViewModel: CoreDataViewModel = CoreDataViewModel()
+    @StateObject var cdViewModel: ListViewModel = ListViewModel()
     
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
                 ListView()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
             .environmentObject(cdViewModel)
         }
@@ -29,7 +25,6 @@ struct DrugReminderApp: App {
             switch newScenePhase {
             case .background:
                 print("Scene is in background")
-                persistenceController.save()
             case .inactive:
                 print("Scene is inactive")
             case .active:

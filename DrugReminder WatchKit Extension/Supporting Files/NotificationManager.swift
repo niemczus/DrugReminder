@@ -16,8 +16,6 @@ class NotificationManager {
         UNUserNotificationCenter.current().requestAuthorization(options: options) { succes, error in
             if let error = error {
                 print("error: \(error)")
-            } else {
-                print("success")
             }
         }
     }
@@ -29,10 +27,6 @@ class NotificationManager {
         content.subtitle = "Don't forget to take your medicine :)"
         content.sound = .default
         
-        //time
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
-        
-        //calendar
         var dateComponents = DateComponents()
         dateComponents.hour = hour
         dateComponents.minute = minutes
@@ -55,7 +49,6 @@ struct NotificationView: View {
             Button("Schedule notification") {
                 NotificationManager.instance.scheduleNotification(hour: 09, minutes: 21)
             }
-
         }
     }
 }

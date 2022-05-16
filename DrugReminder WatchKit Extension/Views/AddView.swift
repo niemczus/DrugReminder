@@ -11,8 +11,7 @@ import SwiftUI
 
 struct AddView: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var listViewModel: ListViewModel
-    @EnvironmentObject var cdViewModel: CoreDataViewModel
+    @EnvironmentObject var cdViewModel: ListViewModel
     @State var seconds: TimeInterval = Double(60 * 60 * 12)
     
     static let formatter: DateComponentsFormatter = {
@@ -32,9 +31,7 @@ struct AddView: View {
                     NavigationLink(destination: TimePicker(seconds: $seconds)) {
                         Text(Self.formatter.string(from: seconds)!)
                     }
-                    Button("Change time") {
-                        
-                    }
+                    Button("Change time") { }
                     .foregroundColor(.orange)
                 }
                 VStack(alignment: .leading) {
@@ -46,7 +43,6 @@ struct AddView: View {
                     .foregroundColor(.orange)
                 }
                 Button("Set Alarm") {
-//                    listViewModel.addAlarm(time: seconds, label: label)
                     cdViewModel.addAlarm(time: seconds)
                     presentationMode.wrappedValue.dismiss()
                     NotificationManager.instance.scheduleNotification(hour: hours, minutes: minutes)
@@ -64,6 +60,6 @@ struct AddView_Previews: PreviewProvider {
         NavigationView {
             AddView(seconds: 100)
         }
-        .environmentObject(CoreDataViewModel())
+        .environmentObject(ListViewModel())
     }
 }
